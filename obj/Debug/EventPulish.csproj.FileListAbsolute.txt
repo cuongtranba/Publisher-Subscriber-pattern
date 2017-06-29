@@ -1,0 +1,8 @@
+D:\Dev\event\event\EventPulish\bin\Debug\EventPulish.exe.config
+D:\Dev\event\event\EventPulish\obj\Debug\EventPulish.csprojResolveAssemblyReference.cache
+D:\Dev\event\event\EventPulish\bin\Debug\EventPulish.exe
+D:\Dev\event\event\EventPulish\bin\Debug\EventPulish.pdb
+D:\Dev\event\event\EventPulish\bin\Debug\Autofac.dll
+D:\Dev\event\event\EventPulish\bin\Debug\Autofac.xml
+D:\Dev\event\event\EventPulish\obj\Debug\EventPulish.exe
+D:\Dev\event\event\EventPulish\obj\Debug\EventPulish.pdb
