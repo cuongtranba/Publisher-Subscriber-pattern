@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using Autofac;
-using EventPulish;
 
 namespace EventPulish
 {
@@ -39,7 +34,7 @@ namespace EventPulish
                     LastName = "ba"
                 });
                 Console.ReadLine();
-            }         
+            }
         }
     }
     public static class ContainerConfig
@@ -51,10 +46,6 @@ namespace EventPulish
             builder.RegisterType<Publisher>().As<IPublisher>();
             builder.RegisterType<EventAggregator>().As<IEventAggregator>();
 
-            var dataAccess = Assembly.GetExecutingAssembly();
-            builder.RegisterAssemblyTypes(dataAccess)
-                   .Where(t => t.Name.EndsWith("Subscriber"))
-                   .AsImplementedInterfaces();
             return builder.Build();
         }
     }
@@ -131,15 +122,16 @@ namespace EventPulish
     {
         public List<ISubscriber<T>> Subscribers<T>()
         {
-            var type = typeof(IMyInterface);
-            var types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(s => s.GetTypes()).Where(p => type.IsAssignableFrom(p));
-            var container = ContainerConfig.Configure();
-            return container.Resolve<IEnumerable<ISubscriber<T>>>().ToList();
+            var subscriberType = typeof(ISubscriber<T>);
+            var types = Assembly.GetEntryAssembly().GetTypes().Where(c=> subscriberType.IsAssignableFrom(c)).ToList();
+            if (types == null || !types.Any())
+            {
+                throw new Exception($"don't have Subscribers for event {typeof(T).FullName}");
+            }
+            return types.Select(type => (ISubscriber<T>) Activator.CreateInstance(type)).ToList();
         }
     }
     #endregion
-
-
 }
 
 

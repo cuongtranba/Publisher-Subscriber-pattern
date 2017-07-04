@@ -6,3 +6,10 @@ D:\Dev\event\event\EventPulish\bin\Debug\Autofac.dll
 D:\Dev\event\event\EventPulish\bin\Debug\Autofac.xml
 D:\Dev\event\event\EventPulish\obj\Debug\EventPulish.exe
 D:\Dev\event\event\EventPulish\obj\Debug\EventPulish.pdb
+f:\dev\Publisher-Subscriber-pattern\bin\Debug\EventPulish.exe.config
+f:\dev\Publisher-Subscriber-pattern\bin\Debug\EventPulish.exe
+f:\dev\Publisher-Subscriber-pattern\bin\Debug\EventPulish.pdb
+f:\dev\Publisher-Subscriber-pattern\bin\Debug\Autofac.xml
+f:\dev\Publisher-Subscriber-pattern\obj\Debug\EventPulish.csprojResolveAssemblyReference.cache
+f:\dev\Publisher-Subscriber-pattern\obj\Debug\EventPulish.exe
+f:\dev\Publisher-Subscriber-pattern\obj\Debug\EventPulish.pdb
